@@ -1,0 +1,50 @@
+#---------------------------------------------------------------
+# This is a basic workflow to help you get started with Actions
+# Copyleft (c) by Kostiantyn Derevianchenko 2021
+#---------------------------------------------------------------
+name: My-ASF_training-Gitactions-ci-cd
+
+# Controls when the action will run. 
+on: 
+    push:
+      branches: 
+       -master
+       
+jobs:
+   My_install:
+  
+         runs-on: ubuntu-latest
+                    
+         
+         steps: 
+          run: echo Begin Asferro Tasks_part 1_ad_packages
+          -name: Run install required packages
+         run: npm i 
+     
+   My_testing:   
+     
+         runs-on: ubuntu-latest
+         needs: [My_install]
+           
+           steps:
+            run: echo Begin testing ASF cod
+            -name:  Asferro Tasks_part 2_Testing
+            run: npm test
+            
+          
+           
+                           
+          
+          
+          
+                 
+             
+  
+
+   
+ 
+     
+      
+      
+      
+ 
